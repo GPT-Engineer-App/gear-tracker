@@ -1,15 +1,32 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { Box, Heading, Text, Button, VStack, HStack, IconButton } from "@chakra-ui/react";
+import { FaPlus, FaBicycle } from "react-icons/fa";
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <Box p={4}>
+      <VStack spacing={8} align="stretch">
+        <Heading as="h1" size="2xl" textAlign="center">
+          Bicycle Gear Tracker
+        </Heading>
+        <Text fontSize="xl" textAlign="center">
+          Keep track of all your bicycling gear in one place.
+        </Text>
+        <HStack justify="center">
+          <IconButton
+            icon={<FaBicycle />}
+            aria-label="Bicycle Icon"
+            size="lg"
+            isRound
+          />
+        </HStack>
+        <HStack justify="center">
+          <Button colorScheme="teal" size="lg" leftIcon={<FaPlus />}>
+            Add New Gear
+          </Button>
+        </HStack>
+      </VStack>
+    </Box>
+  );
 };
 
 export default Index;
